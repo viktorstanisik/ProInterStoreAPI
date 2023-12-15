@@ -4,7 +4,7 @@
 - SOLID Principles and Clean Code
 - JWT for Auth
 - Auto Mapper for Mapping
-- .Net Core 6 with EF Core
+- .Net Core 6 with EF Core with Code First Approach
 - SQl Server
 
 - In the solution Folder - Postman Collection with All Controller routes and Postman ENV
