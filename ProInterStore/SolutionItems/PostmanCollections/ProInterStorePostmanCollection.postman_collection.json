@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "aaed789d-a476-4453-9876-b9f13d9fe3ed",
+		"name": "ProInterStorePostmanCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14743136",
+		"_collection_link": "https://crimson-astronaut-562237.postman.co/workspace/ICON~02b7e88f-6327-433b-98ac-2fbacc138649/collection/14743136-aaed789d-a476-4453-9876-b9f13d9fe3ed?action=share&source=collection_link&creator=14743136"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"test\",\r\n    \"email\": \"test@mail.com\",\r\n    \"phoneNumber\": \"12345\",\r\n    \"password\": \"Qwerty1#\",\r\n    \"confirmPassword\": \"Qwerty1#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/User/register-user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@mail.com\",\r\n    \"password\": \"Qwerty1#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/User/login-user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogoutUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/User/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StoreItem",
+			"item": [
+				{
+					"name": "CreateStoreItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"itemCode\": \"Code7\",\r\n  \"name\": \"TestName\",\r\n  \"productGroupId\": 1,\r\n  \"unitOfMeasure\": \"KG\",\r\n  \"attributes\": [\r\n    {\r\n\r\n      \"attributeColor\": \"Blue\",\r\n      \"attributeHeight\": 112,\r\n      \"attributeWidth\": 33,\r\n      \"attributeWeight\": 34\r\n    }   \r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/StoreItem/create-store-item",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"StoreItem",
+								"create-store-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllStoreItems",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/StoreItem/get-all-store-items",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"StoreItem",
+								"get-all-store-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStoreItem",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"itemCode\": \"Code1\",\r\n    \"name\": \"TestCodeName\",\r\n    \"productGroupId\": 2,\r\n    \"unitOfMeasure\": \"Lb\",\r\n    \"attributes\": [\r\n        {\r\n            \"attributeColor\": \"Yellow\",\r\n            \"attributeHeight\": 200,\r\n            \"attributeWidth\": 2,\r\n            \"attributeWeight\": 22\r\n        },\r\n        {\r\n            \"attributeColor\": \"Purple\",\r\n            \"attributeHeight\": 200,\r\n            \"attributeWidth\": 2,\r\n            \"attributeWeight\": 22\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/StoreItem/update-store-item",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"StoreItem",
+								"update-store-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStoreItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/StoreItem/deletes-tore-item",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"StoreItem",
+								"deletes-tore-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterStoreItems",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"propertyName\": \"Name\",\r\n        \"filterValue\": \"TestCodeName\"\r\n    },\r\n     {\r\n         \"propertyName\": \"AttributeColor\",\r\n         \"filterValue\": \"Yellow\"\r\n     },\r\n    {\r\n        \"propertyName\": \"ItemCode\",\r\n        \"filterValue\": \"Code7          \"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/StoreItem/filter-elements",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"StoreItem",
+								"filter-elements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
